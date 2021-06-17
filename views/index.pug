@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    meta(name="theme-color", content="#000000")
+    link(rel="stylesheet" href="/styles.css")
+    
+  body#root
+    div
+      h2.Banner May Node and Express be with you.
+      form(action="/add" method="POST")
+        input(type="text" placeholder="name" name="name")
+        button(type="submit") Submit
+      div
+        ul
+          each quote in names
+            li
+              span=quote.name
+      //- pre=JSON.stringify(names, null, 2)
+      div
+        h2 Writer names!
+        p Replace first selected quote by Writer's one
+        button(id="update-button") Replace Name
+      div
+        h2 Remove Name!
+        p Delete one Writer's name.
+        button(id="delete-button") Delete Quote
+      div#message
+    
+    script(src="/main.js")      
+    
